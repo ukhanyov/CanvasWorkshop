@@ -24,7 +24,7 @@ import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
 @Composable
 fun SelectorScreenPreview() {
     CanvasWorkshopTheme {
-        Toolbar(
+        AppToolbar(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
@@ -33,7 +33,7 @@ fun SelectorScreenPreview() {
 }
 
 @Composable
-fun Toolbar(
+fun AppToolbar(
     modifier: Modifier = Modifier,
     selectedScreen: Screens = Screens.Selector,
     onBackClicked: (Screens) -> Unit = {}
@@ -51,7 +51,7 @@ fun Toolbar(
         )
         if (selectedScreen != Screens.Selector)
             Text(
-                text = "Go Back to lessons selection",
+                text = "Go Back to screens selection",
                 modifier = Modifier
                     .padding(start = 8.dp)
             )

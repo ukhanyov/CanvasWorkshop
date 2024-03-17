@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -38,9 +39,31 @@ fun SelectorScreen(
             .padding(16.dp)
             .verticalScroll(listState)
     ) {
-        Screens.entries.forEach {
+        Text(
+            modifier = Modifier
+                .padding(vertical = 8.dp),
+            text = "Major",
+            fontSize = 20.sp,
+        )
+        majorScreens.forEach {
             Text(
-                text = "$it",
+                text = it.name,
+                fontSize = 20.sp,
+                modifier = Modifier
+                    .padding(vertical = 8.dp)
+                    .clickable { onScreenSelected(it) }
+            )
+        }
+        HorizontalDivider()
+        Text(
+            modifier = Modifier
+                .padding(vertical = 8.dp),
+            text = "Minor",
+            fontSize = 20.sp,
+        )
+        minorScreens.forEach {
+            Text(
+                text = it.name,
                 fontSize = 20.sp,
                 modifier = Modifier
                     .padding(vertical = 8.dp)
@@ -49,3 +72,8 @@ fun SelectorScreen(
         }
     }
 }
+
+val majorScreens = listOf<Screens>()
+val minorScreens = listOf<Screens>(
+    Screens.AnimatingAPathArrow
+)
