@@ -14,6 +14,8 @@ import androidx.compose.ui.tooling.preview.*
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.canvasworkshop.Screens
+import com.example.canvasworkshop.majorScreens
+import com.example.canvasworkshop.minorScreens
 import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
 
 @Preview
@@ -72,8 +74,3 @@ fun SelectorScreen(
         }
     }
 }
-
-val majorScreens = listOf<Screens>()
-val minorScreens = listOf<Screens>(
-    Screens.AnimatingAPathArrow
-)
