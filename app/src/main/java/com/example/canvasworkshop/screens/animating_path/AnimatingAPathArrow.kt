@@ -15,13 +15,17 @@ import androidx.compose.ui.graphics.asAndroidPath
 import androidx.compose.ui.graphics.asComposePath
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.*
 import androidx.compose.ui.unit.dp
 import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
 import kotlin.math.PI
 import kotlin.math.atan2
 
-@Preview(showBackground = true)
+@Preview
+@PreviewScreenSizes
+@PreviewDynamicColors
+@PreviewFontScale
+@PreviewLightDark
 @Composable
 fun AnimatingAPathArrowScreenPreview() {
     CanvasWorkshopTheme {

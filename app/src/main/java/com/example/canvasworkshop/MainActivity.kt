@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.example.canvasworkshop.screens.animating_path.AnimatingAPathArrowScreen
 import com.example.canvasworkshop.screens.animating_path.AnimatingAPathLineScreen
 import com.example.canvasworkshop.screens.common.AppToolbar
+import com.example.canvasworkshop.screens.detecting_touch.DetectingTouchScreen
 import com.example.canvasworkshop.screens.selector.SelectorScreen
 import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
 
@@ -63,6 +64,16 @@ fun CanvasWorkshopApp() {
                         selectedScreen = selectedScreen,
                     ) { selectedScreen = it }
                     AnimatingAPathLineScreen()
+                }
+
+                Screens.DetectingTouch -> Column {
+                    AppToolbar(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        selectedScreen = selectedScreen,
+                    ) { selectedScreen = it }
+                    DetectingTouchScreen()
                 }
             }
         }
