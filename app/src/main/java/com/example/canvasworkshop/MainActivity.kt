@@ -6,10 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.*
+import com.example.canvasworkshop.screens.selector.SelectorScreen
 import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,30 +17,37 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CanvasWorkshopTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
+                CanvasWorkshopApp()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun CanvasWorkshopApp() {
+    CanvasWorkshopTheme {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            var selectedScreen by remember {
+                mutableStateOf(Screens.Selector)
+            }
+            when (selectedScreen) {
+                Screens.Selector -> {
+                    SelectorScreen { selectedScreen = it }
+                }
+            }
+        }
+    }
 }
 
-@Preview(showBackground = true)
+@Preview
+@PreviewScreenSizes
+@PreviewDynamicColors
+@PreviewFontScale
+@PreviewLightDark
 @Composable
-fun GreetingPreview() {
-    CanvasWorkshopTheme {
-        Greeting("Android")
-    }
+fun CinemaAppPreview() {
+    CanvasWorkshopApp()
 }
