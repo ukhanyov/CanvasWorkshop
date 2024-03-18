@@ -12,6 +12,7 @@ sealed class Screens(val name: String) {
     data object PathDemonstration : Screens("Path Demonstration")
     data object PathEffects : Screens("Path Effects")
     data object PathOperations : Screens("Path Operations")
+    data object SimpleCanvasShapes : Screens("Simple Canvas Shapes")
 }
 
 val majorScreens = listOf<Screens>(
@@ -27,4 +28,5 @@ val minorScreens = listOf(
     Screens.PathDemonstration,
     Screens.PathEffects,
     Screens.PathOperations,
+    Screens.SimpleCanvasShapes,
 )
