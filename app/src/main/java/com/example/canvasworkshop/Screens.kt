@@ -9,6 +9,7 @@ sealed class Screens(val name: String) {
     data object DrawingText : Screens("Drawing Text")
     data object GenderPicker : Screens("Gender Picker")
     data object PathBasics : Screens("Path Basics")
+    data object PathDemonstration : Screens("Path Demonstration")
 }
 
 val majorScreens = listOf<Screens>(
@@ -21,4 +22,5 @@ val minorScreens = listOf(
     Screens.DrawingImagesAndBlendModes,
     Screens.DrawingText,
     Screens.PathBasics,
+    Screens.PathDemonstration,
 )
