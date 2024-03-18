@@ -18,10 +18,10 @@ import com.example.canvasworkshop.screens.detecting_touch.DetectingTouchScreen
 import com.example.canvasworkshop.screens.drawing.DrawingImagesAndBlendModesScreen
 import com.example.canvasworkshop.screens.drawing.DrawingTextScreen
 import com.example.canvasworkshop.screens.gender_picker.GenderPickerScreen
+import com.example.canvasworkshop.screens.path.AnimatingAPathArrowScreen
+import com.example.canvasworkshop.screens.path.AnimatingAPathLineScreen
 import com.example.canvasworkshop.screens.path.PathBasicsScreen
 import com.example.canvasworkshop.screens.path.PathDemonstrationScreen
-import com.example.canvasworkshop.screens.path_animating.AnimatingAPathArrowScreen
-import com.example.canvasworkshop.screens.path_animating.AnimatingAPathLineScreen
 import com.example.canvasworkshop.screens.selector.SelectorScreen
 import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
 

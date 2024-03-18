@@ -1,4 +1,4 @@
-package com.example.canvasworkshop.screens.path_animating
+package com.example.canvasworkshop.screens.path
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
@@ -8,18 +8,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.graphics.asAndroidPath
-import androidx.compose.ui.graphics.asComposePath
+import androidx.compose.ui.graphics.PathMeasure
 import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.tooling.preview.*
 import androidx.compose.ui.unit.dp
 import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
-import kotlin.math.PI
-import kotlin.math.atan2
 
 @Preview
 @PreviewScreenSizes
@@ -27,14 +22,14 @@ import kotlin.math.atan2
 @PreviewFontScale
 @PreviewLightDark
 @Composable
-fun AnimatingAPathArrowScreenPreview() {
+fun AnimatingAPathLineScreenPreview() {
     CanvasWorkshopTheme {
-        AnimatingAPathArrowScreen()
+        AnimatingAPathLineScreen()
     }
 }
 
 @Composable
-fun AnimatingAPathArrowScreen() {
+fun AnimatingAPathLineScreen() {
     val pathPortion = remember {
         Animatable(initialValue = 0f)
     }
@@ -50,34 +45,19 @@ fun AnimatingAPathArrowScreen() {
         moveTo(100f, 100f)
         quadraticBezierTo(400f, 400f, 100f, 400f)
     }
-    val outPath = android.graphics.Path()
-    val pos = FloatArray(2)
-    val tan = FloatArray(2)
-    android.graphics.PathMeasure().apply {
-        setPath(path.asAndroidPath(), false)
-        getSegment(0f, pathPortion.value * length, outPath, true)
-        getPosTan(pathPortion.value * length, pos, tan)
+    val outPath = Path()
+    PathMeasure().apply {
+        setPath(
+            path = path,
+            forceClosed = false
+        )
+        getSegment(0f, pathPortion.value * length, outPath)
     }
     Canvas(modifier = Modifier.fillMaxSize()) {
         drawPath(
-            path = outPath.asComposePath(),
+            path = outPath,
             color = Color.Red,
             style = Stroke(width = 5.dp.toPx())
         )
-
-        val x = pos[0]
-        val y = pos[1]
-        val degrees = -atan2(tan[0], tan[1]) * (180f / PI.toFloat()) - 180f
-        rotate(degrees = degrees, pivot = Offset(x, y)) {
-            drawPath(
-                path = Path().apply {
-                    moveTo(x, y - 30)
-                    lineTo(x - 30f, y + 60f)
-                    lineTo(x + 30f, y + 60f)
-                    close()
-                },
-                color = Color.Red
-            )
-        }
     }
 }
