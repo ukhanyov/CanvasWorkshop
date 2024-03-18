@@ -21,6 +21,7 @@ import com.example.canvasworkshop.screens.detecting_touch.DetectingTouchScreen
 import com.example.canvasworkshop.screens.drawing.DrawingImagesAndBlendModesScreen
 import com.example.canvasworkshop.screens.drawing.DrawingTextScreen
 import com.example.canvasworkshop.screens.gender_picker.GenderPickerScreen
+import com.example.canvasworkshop.screens.image_reveal.ImageRevealScreen
 import com.example.canvasworkshop.screens.path.*
 import com.example.canvasworkshop.screens.selector.SelectorScreen
 import com.example.canvasworkshop.screens.tic_tac_toe.TicTacToeScreen
@@ -211,6 +212,16 @@ fun CanvasWorkshopApp() {
                         selectedScreen = selectedScreen,
                     ) { selectedScreen = it }
                     TicTacToeScreen()
+                }
+
+                Screens.ImageReveal -> Column {
+                    AppToolbar(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        selectedScreen = selectedScreen,
+                    ) { selectedScreen = it }
+                    ImageRevealScreen()
                 }
             }
         }
