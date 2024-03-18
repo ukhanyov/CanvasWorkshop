@@ -7,10 +7,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.nativeCanvas
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.*
 import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
 
-@Preview(showBackground = true)
+@Preview
+@PreviewScreenSizes
+@PreviewDynamicColors
+@PreviewFontScale
+@PreviewLightDark
 @Composable
 fun DrawingTextScreenPreview() {
     CanvasWorkshopTheme {

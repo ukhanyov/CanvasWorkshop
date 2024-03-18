@@ -9,13 +9,17 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.res.imageResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.*
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
 import com.example.canvasworkshop.R
 import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
 
-@Preview(showBackground = true)
+@Preview
+@PreviewScreenSizes
+@PreviewDynamicColors
+@PreviewFontScale
+@PreviewLightDark
 @Composable
 fun DrawingImagesAndBlendModesScreenPreview() {
     CanvasWorkshopTheme {

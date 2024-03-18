@@ -10,6 +10,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.*
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -46,6 +47,7 @@ fun SelectorScreen(
                 .padding(vertical = 8.dp),
             text = "Major",
             fontSize = 20.sp,
+            fontWeight = FontWeight.SemiBold,
         )
         majorScreens.forEach {
             Text(
@@ -62,6 +64,7 @@ fun SelectorScreen(
                 .padding(vertical = 8.dp),
             text = "Minor",
             fontSize = 20.sp,
+            fontWeight = FontWeight.SemiBold,
         )
         minorScreens.forEach {
             Text(
