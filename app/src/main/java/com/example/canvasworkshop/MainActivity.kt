@@ -23,6 +23,7 @@ import com.example.canvasworkshop.screens.drawing.DrawingTextScreen
 import com.example.canvasworkshop.screens.gender_picker.GenderPickerScreen
 import com.example.canvasworkshop.screens.path.*
 import com.example.canvasworkshop.screens.selector.SelectorScreen
+import com.example.canvasworkshop.screens.tic_tac_toe.TicTacToeScreen
 import com.example.canvasworkshop.screens.weight_picker.WeightPickerScreen
 import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
 
@@ -200,6 +201,16 @@ fun CanvasWorkshopApp() {
                         selectedScreen = selectedScreen,
                     ) { selectedScreen = it }
                     ClockScreen()
+                }
+
+                Screens.TicTacToe -> Column {
+                    AppToolbar(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        selectedScreen = selectedScreen,
+                    ) { selectedScreen = it }
+                    TicTacToeScreen()
                 }
             }
         }
