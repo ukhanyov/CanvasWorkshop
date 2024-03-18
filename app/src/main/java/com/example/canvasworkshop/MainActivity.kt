@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.*
 import androidx.compose.ui.unit.dp
 import com.example.canvasworkshop.screens.canvas.SimpleCanvasShapesScreen
+import com.example.canvasworkshop.screens.canvas.TransformationsAndClippingScreen
 import com.example.canvasworkshop.screens.common.AppToolbar
 import com.example.canvasworkshop.screens.detecting_touch.DetectingTouchScreen
 import com.example.canvasworkshop.screens.drawing.DrawingImagesAndBlendModesScreen
@@ -157,6 +158,16 @@ fun CanvasWorkshopApp() {
                         selectedScreen = selectedScreen,
                     ) { selectedScreen = it }
                     SimpleCanvasShapesScreen()
+                }
+
+                Screens.TransformationsAndClipping -> Column {
+                    AppToolbar(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        selectedScreen = selectedScreen,
+                    ) { selectedScreen = it }
+                    TransformationsAndClippingScreen()
                 }
             }
         }
