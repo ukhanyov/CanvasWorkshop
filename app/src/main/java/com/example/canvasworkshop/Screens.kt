@@ -14,10 +14,12 @@ sealed class Screens(val name: String) {
     data object PathOperations : Screens("Path Operations")
     data object SimpleCanvasShapes : Screens("Simple Canvas Shapes")
     data object TransformationsAndClipping : Screens("Transformations and Clipping")
+    data object WeightPicker : Screens("Weight Picker")
 }
 
-val majorScreens = listOf<Screens>(
-    Screens.GenderPicker
+val majorScreens = listOf(
+    Screens.GenderPicker,
+    Screens.WeightPicker,
 )
 val minorScreens = listOf(
     Screens.AnimatingAPathArrow,

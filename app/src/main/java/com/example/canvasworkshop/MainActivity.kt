@@ -22,6 +22,7 @@ import com.example.canvasworkshop.screens.drawing.DrawingTextScreen
 import com.example.canvasworkshop.screens.gender_picker.GenderPickerScreen
 import com.example.canvasworkshop.screens.path.*
 import com.example.canvasworkshop.screens.selector.SelectorScreen
+import com.example.canvasworkshop.screens.weight_picker.WeightPickerScreen
 import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
 
 class MainActivity : ComponentActivity() {
@@ -168,6 +169,16 @@ fun CanvasWorkshopApp() {
                         selectedScreen = selectedScreen,
                     ) { selectedScreen = it }
                     TransformationsAndClippingScreen()
+                }
+
+                Screens.WeightPicker -> Column {
+                    AppToolbar(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        selectedScreen = selectedScreen,
+                    ) { selectedScreen = it }
+                    WeightPickerScreen()
                 }
             }
         }
