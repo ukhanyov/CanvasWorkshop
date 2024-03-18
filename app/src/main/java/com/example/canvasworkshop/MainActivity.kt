@@ -137,6 +137,16 @@ fun CanvasWorkshopApp() {
                     ) { selectedScreen = it }
                     PathEffectsScreen()
                 }
+
+                Screens.PathOperations -> Column {
+                    AppToolbar(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        selectedScreen = selectedScreen,
+                    ) { selectedScreen = it }
+                    PathOperationsScreen()
+                }
             }
         }
     }
