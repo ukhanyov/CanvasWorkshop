@@ -180,6 +180,16 @@ fun CanvasWorkshopApp() {
                     ) { selectedScreen = it }
                     WeightPickerScreen()
                 }
+
+                Screens.WritingTextOnAPath -> Column {
+                    AppToolbar(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        selectedScreen = selectedScreen,
+                    ) { selectedScreen = it }
+                    WritingTextOnAPathScreen()
+                }
             }
         }
     }
