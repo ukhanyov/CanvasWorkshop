@@ -18,6 +18,7 @@ import com.example.canvasworkshop.screens.animating_path.AnimatingAPathLineScree
 import com.example.canvasworkshop.screens.common.AppToolbar
 import com.example.canvasworkshop.screens.detecting_touch.DetectingTouchScreen
 import com.example.canvasworkshop.screens.drawing.DrawingImagesAndBlendModesScreen
+import com.example.canvasworkshop.screens.drawing.DrawingTextScreen
 import com.example.canvasworkshop.screens.selector.SelectorScreen
 import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
 
@@ -85,6 +86,16 @@ fun CanvasWorkshopApp() {
                         selectedScreen = selectedScreen,
                     ) { selectedScreen = it }
                     DrawingImagesAndBlendModesScreen()
+                }
+
+                Screens.DrawingText -> Column {
+                    AppToolbar(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        selectedScreen = selectedScreen,
+                    ) { selectedScreen = it }
+                    DrawingTextScreen()
                 }
             }
         }

@@ -6,6 +6,7 @@ sealed class Screens(val name: String) {
     data object AnimatingAPathLine : Screens("Animating a Path Line")
     data object DetectingTouch : Screens("Detecting Touch")
     data object DrawingImagesAndBlendModes : Screens("Drawing Images and BlendModes")
+    data object DrawingText : Screens("Drawing Text")
 }
 
 val majorScreens = listOf<Screens>()
@@ -14,4 +15,5 @@ val minorScreens = listOf(
     Screens.AnimatingAPathLine,
     Screens.DetectingTouch,
     Screens.DrawingImagesAndBlendModes,
+    Screens.DrawingText,
 )
