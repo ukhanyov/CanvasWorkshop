@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.*
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.canvasworkshop.ui.theme.CanvasWorkshopTheme
@@ -46,7 +46,11 @@ sealed class GameResult {
     data object Tie : GameResult()
 }
 
-@Preview(showBackground = true)
+@Preview
+@PreviewScreenSizes
+@PreviewDynamicColors
+@PreviewFontScale
+@PreviewLightDark
 @Composable
 fun TicTacToeScreenPreview() {
     CanvasWorkshopTheme {
