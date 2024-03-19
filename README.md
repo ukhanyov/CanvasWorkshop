@@ -1,5 +1,7 @@
 A collection of different views made with Canvas in Compose
 
+Hint. For better performance collapse preview before opening a newone.
+
 <details open>
   <summary>Weight Picker view (click to see)</summary>
   <a>
