@@ -1,4 +1,4 @@
-A collection of different views made with Canvas in Compose
+A collection of different views made with Canvas in Compose. Try app by using [this APK](https://github.com/ukhanyov/CanvasWorkshop/raw/master/app-debug.apk)
 
 Hint. For better performance collapse opened previews before opening a new one.
 
